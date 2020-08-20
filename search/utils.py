@@ -8,9 +8,6 @@ search_url = "https://api.cognitive.microsoft.com/bing/v7.0/search"
 search_term = "Azure Cognitive Services"
 
 
-dynamo_db_access_key = "AKIAJQIDJOUWBWNLXXYA"
-
-dynamo_db_secret_key = "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"
 
 def create_dynamodb():
     return boto3.resource('dynamodb')
