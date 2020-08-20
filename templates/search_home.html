@@ -1,0 +1,32 @@
+<div>
+    <h1>Search with dynamoDB</h1>
+</div>
+
+<div>
+    <h2>Search</h2>
+    
+    <form method="post">
+        {% csrf_token %}
+        <label for="gsearch">Search Bing:</label>
+        <input type="search" id="gsearch" name="gsearch">
+        <input type="submit">
+    </form>
+</div>
+
+
+
+<div>
+    <h2>Search Results</h2>
+    {% if db_write == False %}
+        <p>DB write unsuccessful</p>
+    {% endif %}
+    <div style="width: 90%; padding-left: 35px;">
+        {% for board in results.value %}
+            <a href="{{board.url}}"><h4>{{board.name}}</h4></a>
+            <p>{{board.snippet}}</p>
+
+        {% endfor %}
+    </div>
+
+</div>
+
